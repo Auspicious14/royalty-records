@@ -24,17 +24,6 @@ export default function RootLayout({
   )
 }
 
-## 9. src/app/loading.tsx
-```tsx
-export default function Loading() {
-  return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-      <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-600"></div>
-    </div>
-  )
-}
-```
-
 ## 10. src/components/Header.tsx
 ```tsx
 'use client'
