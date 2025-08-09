@@ -1,38 +1,11 @@
 'use client'
 import { useState } from 'react'
 import { Play, Eye } from 'lucide-react'
-import { Video } from '@/utils/constants'
+import { SAMPLE_VIDEOS } from '@/utils/sampleData.ts'
 
 export default function VideosSection() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null)
 
-  // Sample data for demonstration
-  const sampleVideos: Video[] = [
-    {
-      id: '1',
-      title: 'Music Video 1',
-      artist: 'Artist Name',
-      artistId: '1',
-      videoUrl: '/sample-video1.mp4',
-      thumbnailUrl: '/api/placeholder/400/300',
-      duration: '4:20',
-      releaseDate: '2024-01-01',
-      views: 125000,
-      youtubeId: 'sample1'
-    },
-    {
-      id: '2',
-      title: 'Behind The Scenes',
-      artist: 'Artist Name',
-      artistId: '1',
-      videoUrl: '/sample-video2.mp4',
-      thumbnailUrl: '/api/placeholder/400/300',
-      duration: '6:15',
-      releaseDate: '2024-01-15',
-      views: 89000,
-      youtubeId: 'sample2'
-    }
-  ]
 
   const formatViews = (views: number) => {
     if (views >= 1000000) return `${(views / 1000000).toFixed(1)}M`
@@ -48,7 +21,7 @@ export default function VideosSection() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {sampleVideos.map((video, index) => (
+          {SAMPLE_VIDEOS.map((video, index) => (
             <div
               key={video.id}
               className="group relative bg-gradient-to-br from-white/10 to-white/5 rounded-xl overflow-hidden glass-effect hover:scale-105 transition-all duration-300 animate-slide-up cursor-pointer"
