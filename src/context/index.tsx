@@ -1,6 +1,6 @@
 'use client'
 import { ReactNode } from 'react'
-import { ArtistsContextProvider } from '@/modules/artists/context'
+import { ArtistsContextProvider } from '@/modules/artist/context'
 ////import { MusicContextProvider } from '@/modules/music/context'
 //import { VideosContextProvider } from '@/modules/videos/context'
 //import { ContactContextProvider } from '@/modules/contact/context'
