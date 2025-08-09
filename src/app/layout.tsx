@@ -1,13 +1,21 @@
 
 import type { Metadata } from 'next'
-import './global.css'
+import './globals.css'
+import { AppContextProvider } from '@/context/AppContext'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Royalty Records - Premium Music Distribution',
-  description: 'Professional royalty management and music distribution platform for artists worldwide.',
-  keywords: 'music, royalties, distribution, artists, streaming, publishing',
-  authors: [{ name: 'Royalty Records' }],
+  title: 'Kings Productions & Management - Where Legend Hits Are Made',
+  description: 'Premier entertainment and business hub focused on promoting artists and creating premium content.',
+  keywords: 'music production, artist management, entertainment, booking, talent agency',
+  authors: [{ name: 'Kings Productions & Management' }],
   viewport: 'width=device-width, initial-scale=1',
+  openGraph: {
+    title: 'Kings Productions & Management',
+    description: 'Where Legend Hits Are Made',
+    type: 'website',
+  }
 }
 
 export default function RootLayout({
@@ -18,7 +26,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="antialiased">
-        {children}
+        <AppContextProvider>
+          <Header />
+          <main className="min-h-screen">
+            {children}
+          </main>
+          <Footer />
+        </AppContextProvider>
       </body>
     </html>
   )
