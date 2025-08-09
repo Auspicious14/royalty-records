@@ -1,9 +1,8 @@
 'use client'
-import { useAppContext } from '@/context/AppContext'
+import { SAMPLE_ARTISTS } from '@/utils/sampleData.ts'
 import ArtistCard from './ArtistCard'
 
 export default function ArtistsSection() {
-  const { artists } = useAppContext()
 
   return (
     <section id="artists" className="py-24 bg-gradient-to-br from-royal-purple/90 to-royal-blue/90">
@@ -13,7 +12,7 @@ export default function ArtistsSection() {
         </h2>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {artists.map((artist, index) => (
+          {SAMPLE_ARTISTS.map((artist, index) => (
             <ArtistCard
               key={artist.id}
               artist={artist}
