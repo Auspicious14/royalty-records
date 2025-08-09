@@ -7,11 +7,11 @@ import { ArtistsContextProvider } from '@/modules/artist/context'
 //import { HomeContextProvider } from '@/modules/home/context'
 import { Toaster } from 'react-hot-toast'
 
-interface GlobalContextProviderProps {
+interface AppContextProviderProps {
   children: ReactNode
 }
 
-export const GlobalContextProvider = ({ children }: GlobalContextProviderProps) => {
+export const AppContextProvider = ({ children }: AppContextProviderProps) => {
   return (
    // <HomeContextProvider>
       <ArtistsContextProvider>
