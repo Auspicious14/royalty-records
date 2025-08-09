@@ -1,5 +1,5 @@
 'use client'
-import { SAMPLE_ARTISTS } from '../context'
+import { useArtistsContext } from '../context'
 import ArtistCard from './ArtistCard'
 
 export default function ArtistsSection() {
