@@ -3,7 +3,7 @@ import { useArtistsContext } from '../context'
 import ArtistCard from './ArtistCard'
 
 export default function ArtistsSection() {
-  const { artists } useArtistsContext()
+  const { artists as any } useArtistsContext()
 
 
   return (
