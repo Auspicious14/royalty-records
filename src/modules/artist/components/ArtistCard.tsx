@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { Play, Pause } from 'lucide-react'
-import { Artist } from '@/utils/constants'
+import { Artist } from '../model'
 
 interface ArtistCardProps {
   artist: Artist
