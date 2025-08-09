@@ -1,10 +1,10 @@
 'use client'
 import { ReactNode } from 'react'
 import { ArtistsContextProvider } from '@/modules/artists/context'
-import { MusicContextProvider } from '@/modules/music/context'
-import { VideosContextProvider } from '@/modules/videos/context'
-import { ContactContextProvider } from '@/modules/contact/context'
-import { HomeContextProvider } from '@/modules/home/context'
+////import { MusicContextProvider } from '@/modules/music/context'
+//import { VideosContextProvider } from '@/modules/videos/context'
+//import { ContactContextProvider } from '@/modules/contact/context'
+//import { HomeContextProvider } from '@/modules/home/context'
 import { Toaster } from 'react-hot-toast'
 
 interface GlobalContextProviderProps {
@@ -13,11 +13,8 @@ interface GlobalContextProviderProps {
 
 export const GlobalContextProvider = ({ children }: GlobalContextProviderProps) => {
   return (
-    <HomeContextProvider>
+   // <HomeContextProvider>
       <ArtistsContextProvider>
-        <MusicContextProvider>
-          <VideosContextProvider>
-            <ContactContextProvider>
               {children}
               <Toaster 
                 position="top-right"
@@ -42,10 +39,7 @@ export const GlobalContextProvider = ({ children }: GlobalContextProviderProps) 
                   },
                 }}
               />
-            </ContactContextProvider>
-          </VideosContextProvider>
-        </MusicContextProvider>
+          
       </ArtistsContextProvider>
-    </HomeContextProvider>
   )
 }
