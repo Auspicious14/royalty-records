@@ -1,33 +1,13 @@
 'use client'
 import { useState } from 'react'
 import { useAppContext } from '@/context/AppContext'
-import { Music } from '@/utils/constants'
+import { IMusic } from "./model.ts"
 import { Play, Download, ExternalLink } from 'lucide-react'
+import { SAMPLE_MUSIC } from "@/utils/sampleData.ts"
 
 export default function MusicSection() {
-  const { music } = useAppContext()
   const [currentPlaying, setCurrentPlaying] = useState<string | null>(null)
 
-  // Sample data for demonstration
-  const sampleMusic: Music[] = [
-    {
-      id: '1',
-      title: 'Song Title',
-      artist: 'Artist Name',
-      artistId: '1',
-      audioUrl: '/sample.mp3',
-      genre: 'Hip Hop',
-      duration: '3:45',
-      releaseDate: '2024-01-01',
-      image: '/api/placeholder/300/300',
-      streamingLinks: {
-        spotify: '#',
-        appleMusic: '#',
-        youtube: '#'
-      }
-    },
-    // Add more sample songs...
-  ]
 
   const handlePlay = (musicId: string) => {
     if (currentPlaying === musicId) {
@@ -45,7 +25,7 @@ export default function MusicSection() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {sampleMusic.map((song, index) => (
+          {SAMPLE_MUSIC.map((song, index) => (
             <div
               key={song.id}
               className="glass-effect p-6 rounded-xl hover:bg-white/20 transition-all duration-300 animate-slide-up"
