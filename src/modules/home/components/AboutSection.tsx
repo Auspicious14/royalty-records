@@ -1,10 +1,7 @@
 'use client'
-import { useAppContext } from '@/context/AppContext'
+import { SAMPLE_ABOUT } from "@/utils/sampleData.ts";
 
 export default function AboutSection() {
-  const { about } = useAppContext()
-
-  if (!about) return null
 
   return (
     <section id="about" className="py-24 bg-gradient-to-br from-royal-dark/90 to-royal-purple/90">
@@ -16,20 +13,20 @@ export default function AboutSection() {
           
           <div className="glass-effect p-8 rounded-2xl animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-8">
-              {about.content}
+              {SAMPLE_ABOUT.content}
             </p>
             
             <div className="grid md:grid-cols-2 gap-8">
               <div className="text-left">
                 <h3 className="font-display text-2xl font-bold text-gold-400 mb-4">Our Mission</h3>
                 <p className="text-white/80 leading-relaxed">
-                  {about.mission}
+                  {SAMPLE_ABOUT.mission}
                 </p>
               </div>
               <div className="text-left">
                 <h3 className="font-display text-2xl font-bold text-gold-400 mb-4">Our Vision</h3>
                 <p className="text-white/80 leading-relaxed">
-                  {about.vision}
+                  {SAMPLE_ABOUT.vision}
                 </p>
               </div>
             </div>
