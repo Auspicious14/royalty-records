@@ -1,6 +1,5 @@
 'use client'
 import { Mail, Phone, Facebook, Instagram, Twitter, Youtube } from 'lucide-react'
-import { CONTACT_INFO } from '@/utils/constants'
 
 export default function ContactSection() {
   const socialIcons = {
@@ -10,6 +9,16 @@ export default function ContactSection() {
     youtube: Youtube,
   }
 
+  const CONTACT_INFO = {
+    email: "cocohen@gmail.com",
+    socialMedia: {
+      facebook: "#",
+      instagram:"#",
+      twitter:"#",
+      youtube:"#",
+    }
+  }
+  
   return (
     <section id="contact" className="py-24 bg-gradient-to-br from-royal-purple/90 to-royal-blue/90">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
