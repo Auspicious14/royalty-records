@@ -1,9 +1,10 @@
 'use client'
 import { useArtistsContext } from '../context'
 import ArtistCard from './ArtistCard'
+import { Artist } from '../model'
 
 export default function ArtistsSection() {
-  const { artists as any } useArtistsContext()
+  const { artists } = useArtistsContext() as { artists: Artist[] };
 
 
   return (
