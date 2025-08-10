@@ -39,21 +39,26 @@ export default function VideoBackground({
         <source src={src} type="video/mp4" />
         <div className="absolute inset-0 royal-gradient"></div>
       </video> */}
-      <iframe
-        width="100%"
-        height="315"
-        src={src}
-        title="YouTube video player"
-        frameBorder={0}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-      ></iframe>
+      
+      {/* YouTube iframe with pointer-events-auto to ensure clicks work */}
+      <div className="relative z-30 w-full h-full pointer-events-auto">
+        <iframe
+          width="100%"
+          height="100%"
+          src={src && src.includes('youtube.com') ? `${src}&enablejsapi=1` : src}
+          title="YouTube video player"
+          frameBorder={0}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+          className="absolute inset-0"
+        ></iframe>
+      </div>
 
       {/* {overlay && <div className="absolute inset-0 bg-black/60 z-10"></div>} */}
 
-      {/* Animated overlay elements */}
-      <div className="absolute inset-0 z-20">
+      {/* Animated overlay elements - moved to z-10 so they don't block video interaction */}
+      <div className="absolute inset-0 z-10 pointer-events-none">
         <div className="absolute top-1/4 left-10 w-64 h-64 bg-gold-400/10 rounded-full blur-3xl animate-float"></div>
         <div
           className="absolute bottom-1/4 right-10 w-80 h-80 bg-royal-purple/20 rounded-full blur-3xl animate-float"

@@ -27,12 +27,15 @@ export default function HeroSection() {
           <p className="text-xl sm:text-2xl lg:text-3xl text-white font-light mb-12 max-w-3xl mx-auto">
             WHERE LEGEND HITS ARE MADE
           </p>
-          <VideoBackground
-            overlay={true}
-            poster=""
-            src="https://www.youtube.com/embed/1fOBgosDo7s?si=gQGbQKgjjinB-PCV"
-            className="absolute inset-0 w-full h-full"
-          />
+          {/* Video Background with proper positioning and sizing */}
+          <div className="relative w-full h-[50vh] my-8">
+            <VideoBackground
+              overlay={true}
+              poster=""
+              src="https://www.youtube.com/embed/1fOBgosDo7s?si=gQGbQKgjjinB-PCV"
+              className="absolute inset-0 w-full h-full"
+            />
+          </div>
           <button
             onClick={scrollToArtists}
             className="gold-button text-royal-dark px-8 py-4 rounded-full font-bold text-lg sm:text-xl hover:scale-110 transition-all duration-300 animate-pulse-glow my-10"
