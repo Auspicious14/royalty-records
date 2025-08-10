@@ -1,6 +1,6 @@
 
 import type { Metadata } from 'next'
-import './global.css'
+import './globals.css'
 import { AppContextProvider } from '@/context'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
