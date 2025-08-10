@@ -1,7 +1,7 @@
 'use client'
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
 import { apiClient } from '@/lib/api'
-import { Artist, BookingRequest } from './models'
+import { Artist, BookingRequest } from './model'
 import { SAMPLE_ARTISTS } from '@/utils/sampleData'
 import toast from 'react-hot-toast'
 
