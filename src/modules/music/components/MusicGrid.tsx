@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useAppContext } from '@/context/AppContext'
 //import { IMusic } from "./model.ts"
 import { Play, Download, ExternalLink } from 'lucide-react'
-import { SAMPLE_MUSIC } from "@/utils/sampleData.ts"
+import { SAMPLE_MUSIC } from "@/utils/sampleData"
 
 export default function MusicSection() {
   const [currentPlaying, setCurrentPlaying] = useState<string | null>(null)
