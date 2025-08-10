@@ -11,11 +11,12 @@ export default function ContactSection() {
 
   const CONTACT_INFO = {
     email: "cocohen@gmail.com",
+    phone:'27694636',
     socialMedia: {
       facebook: "#",
       instagram:"#",
       twitter:"#",
-      youtube:"#",
+      youtube:"#"
     }
   }
   
