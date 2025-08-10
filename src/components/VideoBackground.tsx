@@ -1,33 +1,33 @@
-'use client'
-import { useEffect, useRef } from 'react'
+"use client";
+import { useEffect, useRef } from "react";
 
 interface VideoBackgroundProps {
-  src?: string
-  poster?: string
-  className?: string
-  overlay?: boolean
+  src?: string;
+  poster?: string;
+  className?: string;
+  overlay?: boolean;
 }
 
 export default function VideoBackground({
-  src = '/hero-bg.mp4',
+  src = "/hero-bg.mp4",
   poster,
-  className = '',
-  overlay = true
+  className = "",
+  overlay = true,
 }: VideoBackgroundProps) {
-  const videoRef = useRef<HTMLVideoElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    const video = videoRef.current
+    const video = videoRef.current;
     if (video) {
-      video.muted = true
-      video.playsInline = true
-      video.play().catch(console.error)
+      video.muted = true;
+      video.playsInline = true;
+      video.play().catch(console.error);
     }
-  }, [])
+  }, []);
 
   return (
     <div className={`relative overflow-hidden ${className}`}>
-      <video
+      {/* <video
         ref={videoRef}
         autoPlay
         muted
@@ -37,19 +37,29 @@ export default function VideoBackground({
         className="absolute inset-0 w-full h-full object-cover z-0"
       >
         <source src={src} type="video/mp4" />
-        {/* Fallback gradient background if video fails */}
         <div className="absolute inset-0 royal-gradient"></div>
-      </video>
-      
-      {overlay && (
-        <div className="absolute inset-0 bg-black/60 z-10"></div>
-      )}
-      
+      </video> */}
+      <iframe
+        width="100%"
+        height="315"
+        src={src}
+        title="YouTube video player"
+        frameBorder={0}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
+      ></iframe>
+
+      {/* {overlay && <div className="absolute inset-0 bg-black/60 z-10"></div>} */}
+
       {/* Animated overlay elements */}
       <div className="absolute inset-0 z-20">
         <div className="absolute top-1/4 left-10 w-64 h-64 bg-gold-400/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-10 w-80 h-80 bg-royal-purple/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
+        <div
+          className="absolute bottom-1/4 right-10 w-80 h-80 bg-royal-purple/20 rounded-full blur-3xl animate-float"
+          style={{ animationDelay: "3s" }}
+        ></div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,199 +1,254 @@
-
-
 export const SAMPLE_ARTISTS = [
   {
-    id: '1',
-    name: 'Marcus "King" Johnson',
-    bio: 'Grammy-nominated hip-hop artist with over 10 million streams worldwide. Known for his powerful lyrics and dynamic stage presence.',
-    image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop&crop=face',
-    audioPreview: '/samples/marcus-preview.mp3',
-    videoPreview: '/samples/marcus-video.mp4',
-    genres: ['Hip Hop', 'Rap', 'R&B'],
+    id: "1",
+    name: "Lil Durk",
+    bio: "Chicago drill pioneer and OTF founder with multiple platinum records. Known for his emotional delivery and authentic storytelling about street life.",
+    image: "/images/lil-durk.jpg",
+    audioPreview: "https://open.spotify.com/track/5QO79kh1waicV47BqGRL3g",
+    videoPreview: "/samples/durk-video.mp4",
+    genres: ["Hip Hop", "Drill", "Trap"],
     socialLinks: {
-      instagram: 'https://instagram.com/kingmarcus',
-      twitter: 'https://twitter.com/kingmarcus',
-      youtube: 'https://youtube.com/kingmarcus',
-      spotify: 'https://open.spotify.com/artist/kingmarcus'
+      instagram: "https://instagram.com/lildurk",
+      twitter: "https://twitter.com/lildurk",
+      youtube: "https://youtube.com/lildurk",
+      spotify: "https://open.spotify.com/artist/3qiHUAX7zY4Qnjx8TNUzVx",
     },
-    bookingEmail: 'booking@kingmarcus.com',
+    bookingEmail: "booking@otfent.com",
     verified: true,
-    monthlyListeners: 2500000
+    monthlyListeners: 14500000,
   },
   {
-    id: '2',
-    name: 'Aria "Diamond" Williams',
-    bio: 'Rising R&B sensation with a voice that captivates audiences. Her debut album "Crystalline Dreams" topped the R&B charts for 8 consecutive weeks.',
-    image: 'https://images.unsplash.com/photo-1494790108755-2616b612b1c5?w=400&h=400&fit=crop&crop=face',
-    audioPreview: '/samples/aria-preview.mp3',
-    videoPreview: '/samples/aria-video.mp4',
-    genres: ['R&B', 'Soul', 'Pop'],
+    id: "2",
+    name: "Summer Walker",
+    bio: 'R&B sensation known for her raw, confessional lyrics and sultry vocals. Her debut album "Over It" broke streaming records for female R&B artists.',
+    image: "/images/summer-walker.jpg",
+    audioPreview: "https://open.spotify.com/track/6mFkJmJqdDVQ1REhVfGgd1",
+    videoPreview: "/samples/summer-video.mp4",
+    genres: ["R&B", "Soul", "Alternative R&B"],
     socialLinks: {
-      instagram: 'https://instagram.com/ariadiamond',
-      twitter: 'https://twitter.com/ariadiamond',
-      youtube: 'https://youtube.com/ariadiamond',
-      spotify: 'https://open.spotify.com/artist/ariadiamond'
+      instagram: "https://instagram.com/summerwalker",
+      twitter: "https://twitter.com/IAMSUMMERWALKER",
+      youtube: "https://youtube.com/summerwalker",
+      spotify: "https://open.spotify.com/artist/5XJDexmWFQfvbksgXXpGfO",
     },
-    bookingEmail: 'booking@ariadiamond.com',
+    bookingEmail: "booking@summerwalker.com",
     verified: true,
-    monthlyListeners: 1800000
+    monthlyListeners: 9800000,
   },
   {
-    id: '3',
-    name: 'DJ Thunder',
-    bio: 'Electronic music producer and DJ who has headlined major festivals worldwide. Known for his innovative sound design and explosive live performances.',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
-    audioPreview: '/samples/thunder-preview.mp3',
-    videoPreview: '/samples/thunder-video.mp4',
-    genres: ['Electronic', 'EDM', 'House'],
+    id: "3",
+    name: "Metro Boomin",
+    bio: "Grammy-winning producer and DJ who has crafted chart-topping hits for Future, 21 Savage, and The Weeknd. Known for his signature producer tag and innovative sound.",
+    image: "/images/metro-boomin.jpg",
+    audioPreview: "https://open.spotify.com/track/7KA4W4McWYRpgf0fWsJZWB",
+    videoPreview: "/samples/metro-video.mp4",
+    genres: ["Hip Hop", "Trap", "Beats"],
     socialLinks: {
-      instagram: 'https://instagram.com/djthunder',
-      twitter: 'https://twitter.com/djthunder',
-      youtube: 'https://youtube.com/djthunder',
-      spotify: 'https://open.spotify.com/artist/djthunder'
+      instagram: "https://instagram.com/metroboomin",
+      twitter: "https://twitter.com/MetroBoomin",
+      youtube: "https://youtube.com/metroboomin",
+      spotify: "https://open.spotify.com/artist/0iEtIxbK0KxaSlF7G42ZOp",
     },
-    bookingEmail: 'booking@djthunder.com',
+    bookingEmail: "booking@metroboomin.com",
     verified: true,
-    monthlyListeners: 3200000
+    monthlyListeners: 12200000,
   },
   {
-    id: '4',
-    name: 'Luna Rodriguez',
-    bio: 'Latin pop star with bilingual hits that have conquered both English and Spanish markets. Her fusion of traditional Latin rhythms with modern pop has earned critical acclaim.',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face',
-    audioPreview: '/samples/luna-preview.mp3',
-    videoPreview: '/samples/luna-video.mp4',
-    genres: ['Latin Pop', 'Reggaeton', 'Pop'],
+    id: "4",
+    name: "Bad Bunny",
+    bio: "Puerto Rican superstar who has revolutionized Latin trap and reggaeton globally. His innovative style and record-breaking streams have made him one of music's biggest global icons.",
+    image: "/images/bad-bunny.jpg",
+    audioPreview:
+      "https://open.spotify.com/track/3sK8wGT43QFpWrvNQsrQya?si=7995fa60ceb74cdb",
+    videoPreview: "/samples/badbunny-video.mp4",
+    genres: ["Latin Trap", "Reggaeton", "Urbano Latino"],
     socialLinks: {
-      instagram: 'https://instagram.com/lunarodriguez',
-      twitter: 'https://twitter.com/lunarodriguez',
-      youtube: 'https://youtube.com/lunarodriguez',
-      spotify: 'https://open.spotify.com/artist/lunarodriguez'
+      instagram: "https://instagram.com/badbunnypr",
+      twitter: "https://twitter.com/sanbenito",
+      youtube: "https://youtube.com/badbunny",
+      spotify: "https://open.spotify.com/artist/4q3ewBCX7sLwd24euuV69X",
     },
-    bookingEmail: 'booking@lunarodriguez.com',
+    bookingEmail: "booking@badbunny.com",
     verified: true,
-    monthlyListeners: 1500000
-  }
-]
+    monthlyListeners: 57500000,
+  },
+];
 
 export const SAMPLE_MUSIC = [
   {
-    id: '1',
-    title: 'Legends Never Die',
-    artist: 'Marcus "King" Johnson',
-    artistId: '1',
-    audioUrl: '/samples/legends-never-die.mp3',
-    downloadUrl: '/downloads/legends-never-die.mp3',
+    id: "1",
+    title: "All My Life",
+    artist: "Lil Durk ft. J. Cole",
+    artistId: "1",
+    audioUrl: "https://open.spotify.com/track/5QO79kh1waicV47BqGRL3g",
+    downloadUrl: "https://open.spotify.com/track/5QO79kh1waicV47BqGRL3g",
     streamingLinks: {
-      spotify: 'https://open.spotify.com/track/legends',
-      appleMusic: 'https://music.apple.com/track/legends',
-      youtube: 'https://youtube.com/watch?v=legends',
-      audiomack: 'https://audiomack.com/track/legends'
+      spotify:
+        "https://open.spotify.com/track/6HgWWaMu31KdOpEG5l28BG?si=8b985c2de97c41c5",
+      appleMusic:
+        "https://music.apple.com/us/album/all-my-life-feat-j-cole/1687355540?i=1687355541",
+      youtube: "https://www.youtube.com/watch?v=zDQiZUCeqLQ",
+      audiomack: "https://audiomack.com/lildurk/song/all-my-life",
     },
-    genre: 'Hip Hop',
-    duration: '3:45',
-    releaseDate: '2024-01-15',
-    image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=300&fit=crop',
-    plays: 5200000,
-    likes: 340000
+    genre: "Hip Hop",
+    duration: "3:45",
+    releaseDate: "2023-05-12",
+    image: "/images/lil-durk.jpg",
+
+    plays: 352000000,
+    likes: 2340000,
   },
   {
-    id: '2',
-    title: 'Crystalline Dreams',
-    artist: 'Aria "Diamond" Williams',
-    artistId: '2',
-    audioUrl: '/samples/crystalline-dreams.mp3',
+    id: "2",
+    title: "Session 32",
+    artist: "Summer Walker",
+    artistId: "2",
+    audioUrl: "/samples/session-32.mp3",
     streamingLinks: {
-      spotify: 'https://open.spotify.com/track/crystalline',
-      appleMusic: 'https://music.apple.com/track/crystalline',
-      youtube: 'https://youtube.com/watch?v=crystalline'
+      spotify: "https://open.spotify.com/track/6mFkJmJqdDVQ1REhVfGgd1",
+      appleMusic:
+        "https://music.apple.com/us/album/session-32/1478601649?i=1478601660",
+      youtube: "https://www.youtube.com/watch?v=yk3j4-fkNbM",
     },
-    genre: 'R&B',
-    duration: '4:12',
-    releaseDate: '2024-02-01',
-    image: 'https://images.unsplash.com/photo-1494790108755-2616b612b1c5?w=300&h=300&fit=crop',
-    plays: 3800000,
-    likes: 280000
+    genre: "R&B",
+    duration: "2:42",
+    releaseDate: "2019-10-04",
+    image: "/images/summer-walker.jpg",
+    plays: 138000000,
+    likes: 1280000,
   },
   {
-    id: '3',
-    title: 'Electric Nights',
-    artist: 'DJ Thunder',
-    artistId: '3',
-    audioUrl: '/samples/electric-nights.mp3',
+    id: "3",
+    title: "Creepin",
+    artist: "Metro Boomin, The Weeknd, 21 Savage",
+    artistId: "3",
+    audioUrl:
+      "https://open.spotify.com/track/3sK8wGT43QFpWrvNQsrQya?si=7995fa60ceb74cdb",
+    downloadUrl:
+      "https://open.spotify.com/track/3sK8wGT43QFpWrvNQsrQya?si=7995fa60ceb74cdb",
     streamingLinks: {
-      spotify: 'https://open.spotify.com/track/electric',
-      youtube: 'https://youtube.com/watch?v=electric'
+      spotify: "https://open.spotify.com/track/2dHHgzDwk4BJdRwy9uXhTO",
+      appleMusic:
+        "https://music.apple.com/us/album/creepin-feat-the-weeknd-21-savage/1655199174?i=1655199815",
+      youtube: "https://www.youtube.com/watch?v=61ymOWwOwuk",
     },
-    genre: 'Electronic',
-    duration: '5:30',
-    releaseDate: '2024-01-28',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop',
-    plays: 6700000,
-    likes: 450000
-  }
-]
+    genre: "Hip Hop",
+    duration: "3:41",
+    releaseDate: "2022-12-02",
+    image: "/images/metro-boomin.jpg",
+    plays: 467000000,
+    likes: 3450000,
+  },
+  {
+    id: "4",
+    title: "Tití Me Preguntó",
+    artist: "Bad Bunny",
+    artistId: "4",
+    audioUrl:
+      "https://open.spotify.com/track/3sK8wGT43QFpWrvNQsrQya?si=7995fa60ceb74cdb",
+    downloadUrl:
+      "https://open.spotify.com/track/3sK8wGT43QFpWrvNQsrQya?si=7995fa60ceb74cdb",
+    streamingLinks: {
+      spotify: "https://open.spotify.com/track/1IHWl5LamUGEuP4ozKQSXZ",
+      appleMusic:
+        "https://music.apple.com/us/album/tit%C3%AD-me-pregunt%C3%B3/1622045624?i=1622045633",
+      youtube: "https://www.youtube.com/watch?v=Cr8K88UcO0s",
+    },
+    genre: "Latin Trap",
+    duration: "4:03",
+    releaseDate: "2022-05-06",
+    image: "/images/bad-bunny.jpg",
+    plays: 1267000000,
+    likes: 8450000,
+  },
+];
 
 export const SAMPLE_VIDEOS = [
   {
-    id: '1',
-    title: 'Legends Never Die - Official Music Video',
-    artist: 'Marcus "King" Johnson',
-    artistId: '1',
-    videoUrl: '/samples/legends-mv.mp4',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=640&h=360&fit=crop',
-    duration: '4:20',
-    releaseDate: '2024-01-20',
-    views: 8500000,
-    youtubeId: 'dQw4w9WgXcQ',
-    likes: 520000,
-    description: 'The official music video for "Legends Never Die" featuring stunning visuals and powerful performances.'
+    id: "1",
+    title: "All My Life - Official Music Video",
+    artist: "Lil Durk ft. J. Cole",
+    artistId: "1",
+    videoUrl: "/samples/all-my-life-mv.mp4",
+    thumbnailUrl:
+      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=640&h=360&fit=crop",
+    duration: "4:20",
+    releaseDate: "2023-05-12",
+    views: 85000000,
+    youtubeId: "zDQiZUCeqLQ",
+    likes: 1520000,
+    description:
+      'The official music video for "All My Life" featuring Lil Durk and J. Cole with powerful visuals and performances.',
   },
   {
-    id: '2',
-    title: 'Crystalline Dreams - Acoustic Version',
-    artist: 'Aria "Diamond" Williams',
-    artistId: '2',
-    videoUrl: '/samples/crystalline-acoustic.mp4',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1494790108755-2616b612b1c5?w=640&h=360&fit=crop',
-    duration: '3:45',
-    releaseDate: '2024-02-10',
-    views: 2300000,
-    youtubeId: 'dQw4w9WgXcQ',
-    likes: 180000,
-    description: 'An intimate acoustic performance of "Crystalline Dreams" recorded live in studio.'
+    id: "2",
+    title: "Session 32 - Live Performance",
+    artist: "Summer Walker",
+    artistId: "2",
+    videoUrl: "/samples/session-32-live.mp4",
+    thumbnailUrl:
+      "https://images.unsplash.com/photo-1494790108755-2616b612b1c5?w=640&h=360&fit=crop",
+    duration: "2:42",
+    releaseDate: "2019-10-04",
+    views: 23000000,
+    youtubeId: "yk3j4-fkNbM",
+    likes: 980000,
+    description:
+      'An intimate live performance of "Session 32" by Summer Walker, showcasing her raw vocals and emotional delivery.',
   },
   {
-    id: '3',
-    title: 'Electric Nights - Live at Ultra Miami',
-    artist: 'DJ Thunder',
-    artistId: '3',
-    videoUrl: '/samples/electric-live.mp4',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=640&h=360&fit=crop',
-    duration: '6:15',
-    releaseDate: '2024-03-01',
-    views: 4100000,
-    youtubeId: 'dQw4w9WgXcQ',
-    likes: 320000,
-    description: 'DJ Thunder\'s explosive performance at Ultra Miami featuring "Electric Nights" and special effects.'
-  }
-]
+    id: "3",
+    title: "Creepin'- Official Music Video",
+    artist: "Metro Boomin, The Weeknd, 21 Savage",
+    artistId: "3",
+    videoUrl: "/samples/creepin-mv.mp4",
+    thumbnailUrl:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=640&h=360&fit=crop",
+    duration: "3:41",
+    releaseDate: "2022-12-16",
+    views: 141000000,
+    youtubeId: "61ymOWwOwuk",
+    likes: 2320000,
+    description:
+      'The official music video for "Creepin\'" featuring The Weeknd and 21 Savage, produced by Metro Boomin.',
+  },
+  {
+    id: "4",
+    title: "Tití Me Preguntó - Official Music Video",
+    artist: "Bad Bunny",
+    artistId: "4",
+    videoUrl: "/samples/titi-me-pregunto-mv.mp4",
+    thumbnailUrl:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=640&h=360&fit=crop",
+    duration: "4:03",
+    releaseDate: "2022-05-06",
+    views: 421000000,
+    youtubeId: "Cr8K88UcO0s",
+    likes: 5320000,
+    description:
+      'The official music video for "Tití Me Preguntó" by Bad Bunny from his album "Un Verano Sin Ti".',
+  },
+];
 
 export const SAMPLE_ABOUT = {
-  title: 'About Kings Productions & Management',
-  content: 'Kings Productions & Management stands as the premier entertainment and business hub, dedicated to promoting exceptional artists and creating premium content that resonates globally. We are the birthplace where legend hits are made, fostering talent and transforming dreams into chart-topping realities.',
-  mission: 'To elevate artists to legendary status through innovative production techniques, strategic management, and unwavering dedication to artistic excellence. We provide comprehensive support that empowers artists to reach their full potential.',
-  vision: 'To become the world\'s leading entertainment powerhouse, recognized for discovering, developing, and delivering the next generation of music legends while maintaining the highest standards of artistic integrity.',
+  title: "About Kings Productions & Management",
+  content:
+    "Kings Productions & Management stands as the premier entertainment and business hub, dedicated to promoting exceptional artists and creating premium content that resonates globally. We are the birthplace where legend hits are made, fostering talent and transforming dreams into chart-topping realities.",
+  mission:
+    "To elevate artists to legendary status through innovative production techniques, strategic management, and unwavering dedication to artistic excellence. We provide comprehensive support that empowers artists to reach their full potential.",
+  vision:
+    "To become the world's leading entertainment powerhouse, recognized for discovering, developing, and delivering the next generation of music legends while maintaining the highest standards of artistic integrity.",
   values: [
-    'Artistic Excellence',
-    'Innovation in Production',
-    'Artist-First Approach',
-    'Global Impact',
-    'Integrity & Transparency'
+    "Artistic Excellence",
+    "Innovation in Production",
+    "Artist-First Approach",
+    "Global Impact",
+    "Integrity & Transparency",
   ],
   stats: {
     artistsSigned: 50,
     songsProduced: 500,
     platformsReached: 150,
-    totalStreams: '2.5B+'
-  }
-}
+    totalStreams: "2.5B+",
+  },
+};

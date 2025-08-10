@@ -11,15 +11,8 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center"
+      className=" relative min-h-screen flex items-center justify-center md:mt-20"
     >
-      <VideoBackground
-        overlay
-        poster=""
-        src="https://youtu.be/1fOBgosDo7s?si=qSesTFNIP_jnNMvU"
-        className="absolute inset-0 w-full h-full"
-      />
-
       <div className="relative z-30 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <div className="animate-fade-in">
           <h1 className="font-display text-4xl sm:text-6xl lg:text-8xl font-bold text-white mb-4 leading-tight">
@@ -34,10 +27,15 @@ export default function HeroSection() {
           <p className="text-xl sm:text-2xl lg:text-3xl text-white font-light mb-12 max-w-3xl mx-auto">
             WHERE LEGEND HITS ARE MADE
           </p>
-
+          <VideoBackground
+            overlay={true}
+            poster=""
+            src="https://www.youtube.com/embed/1fOBgosDo7s?si=gQGbQKgjjinB-PCV"
+            className="absolute inset-0 w-full h-full"
+          />
           <button
             onClick={scrollToArtists}
-            className="gold-button text-royal-dark px-8 py-4 rounded-full font-bold text-lg sm:text-xl hover:scale-110 transition-all duration-300 animate-pulse-glow"
+            className="gold-button text-royal-dark px-8 py-4 rounded-full font-bold text-lg sm:text-xl hover:scale-110 transition-all duration-300 animate-pulse-glow my-10"
           >
             EXPLORE OUR TALENT
           </button>

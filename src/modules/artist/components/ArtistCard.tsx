@@ -1,26 +1,38 @@
-'use client'
-import { useState } from 'react'
-import { Play, Pause } from 'lucide-react'
-import { Artist } from '../model'
+"use client";
+import { useState } from "react";
+import { Play, Pause } from "lucide-react";
+import { Artist } from "../model";
 
 interface ArtistCardProps {
-  artist: Artist
-  delay?: number
+  artist: Artist;
+  delay?: number;
 }
 
 export default function ArtistCard({ artist, delay = 0 }: ArtistCardProps) {
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [showBooking, setShowBooking] = useState(false)
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [showBooking, setShowBooking] = useState(false);
+  const [audio] = useState(
+    new Audio(
+      "https://audio.bfmtv.com/bfmbusiness_128.mp3?aw_0_1st.playerId=AudioPlayer_Web_Next"
+    )
+  );
 
   const handlePlay = () => {
-    setIsPlaying(!isPlaying)
-    // Audio/video play logic here
-  }
+    setIsPlaying(!isPlaying);
+    if (isPlaying) {
+      console.log("pause");
+      audio.pause();
+      console.log({ audio });
+    } else {
+      console.log("play");
+      audio.play();
+    }
+  };
 
   const handleBooking = () => {
-    setShowBooking(true)
+    setShowBooking(true);
     // Open booking modal or form
-  }
+  };
 
   return (
     <div
@@ -34,7 +46,7 @@ export default function ArtistCard({ artist, delay = 0 }: ArtistCardProps) {
           alt={artist.name}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
         />
-        
+
         {/* Play Button Overlay */}
         <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <button
@@ -55,10 +67,8 @@ export default function ArtistCard({ artist, delay = 0 }: ArtistCardProps) {
         <h3 className="font-display text-xl font-bold text-white mb-2">
           {artist.name}
         </h3>
-        <p className="text-white/70 text-sm mb-4 line-clamp-3">
-          {artist.bio}
-        </p>
-        
+        <p className="text-white/70 text-sm mb-4 line-clamp-3">{artist.bio}</p>
+
         <button
           onClick={handleBooking}
           className="w-full gold-button text-royal-dark py-2 px-4 rounded-lg font-bold text-sm hover:scale-105 transition-transform"
@@ -67,5 +77,5 @@ export default function ArtistCard({ artist, delay = 0 }: ArtistCardProps) {
         </button>
       </div>
     </div>
-  )
+  );
 }
