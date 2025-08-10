@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { X, Calendar, MapPin, Clock, DollarSign } from 'lucide-react'
 import { useForm } from 'react-hook-form'
-import { Artist, BookingRequest } from '../models'
+import { Artist, BookingRequest } from '../model'
 import { useArtistsContext } from '../context'
 
 interface BookingModalProps {
