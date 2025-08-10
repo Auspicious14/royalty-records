@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { Play, Eye } from 'lucide-react'
-import { SAMPLE_VIDEOS } from '@/utils/sampleData.ts'
+import { SAMPLE_VIDEOS } from '@/utils/sampleData'
 
 export default function VideosSection() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null)
