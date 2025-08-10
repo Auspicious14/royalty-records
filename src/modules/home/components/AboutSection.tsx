@@ -1,5 +1,5 @@
 'use client'
-import { SAMPLE_ABOUT } from "@/utils/sampleData.ts";
+import { SAMPLE_ABOUT } from "@/utils/sampleData";
 
 export default function AboutSection() {
 
