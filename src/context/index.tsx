@@ -1,6 +1,7 @@
 'use client'
 import { ReactNode } from 'react'
 import { ArtistsContextProvider } from '@/modules/artist/context'
+import { AudioContextProvider } from '@/modules/artist/audioContext'
 import { MusicContextProvider } from '@/modules/music/context'
 //import { VideosContextProvider } from '@/modules/videos/context'
 //import { ContactContextProvider } from '@/modules/contact/context'
@@ -14,33 +15,35 @@ interface AppContextProviderProps {
 export const AppContextProvider = ({ children }: AppContextProviderProps) => {
   return (
    // <HomeContextProvider>
-      <ArtistsContextProvider>
-        <MusicContextProvider>
-          {children}
-          <Toaster 
-            position="top-right"
-            toastOptions={{
-              duration: 4000,
-              style: {
-                background: '#1a1a2e',
-                color: '#fff',
-                border: '1px solid #ffd700'
-              },
-              success: {
-                iconTheme: {
-                  primary: '#ffd700',
-                  secondary: '#1a1a2e',
+      <AudioContextProvider>
+        <ArtistsContextProvider>
+          <MusicContextProvider>
+            {children}
+            <Toaster 
+              position="top-right"
+              toastOptions={{
+                duration: 4000,
+                style: {
+                  background: '#1a1a2e',
+                  color: '#fff',
+                  border: '1px solid #ffd700'
                 },
-              },
-              error: {
-                iconTheme: {
-                  primary: '#e94560',
-                  secondary: '#1a1a2e',
+                success: {
+                  iconTheme: {
+                    primary: '#ffd700',
+                    secondary: '#1a1a2e',
+                  },
                 },
-              },
-            }}
-          />
-        </MusicContextProvider>
-      </ArtistsContextProvider>
+                error: {
+                  iconTheme: {
+                    primary: '#e94560',
+                    secondary: '#1a1a2e',
+                  },
+                },
+              }}
+            />
+          </MusicContextProvider>
+        </ArtistsContextProvider>
+      </AudioContextProvider>
   )
 }
