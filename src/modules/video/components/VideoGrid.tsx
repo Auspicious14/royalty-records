@@ -71,7 +71,7 @@ export default function VideosSection() {
             <div className="bg-white rounded-lg max-w-4xl w-full max-h-[80vh] overflow-hidden">
               <div className="aspect-video">
                 <iframe
-                  src={`https://www.youtube.com/embed/${sampleVideos.find(v => v.id === selectedVideo)?.youtubeId}`}
+                  src={`https://www.youtube.com/embed/${SAMPLE_VIDEOS.find(v => v.id === selectedVideo)?.youtubeId}`}
                   className="w-full h-full"
                   allowFullScreen
                 />
