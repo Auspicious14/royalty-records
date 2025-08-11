@@ -1,23 +1,32 @@
-'use client'
-import { useState, useEffect } from 'react'
-import { Play, Eye, Filter, X, Calendar, User } from 'lucide-react'
-import { useVideoContext } from '../context'
-import { useArtistsContext } from '@/modules/artist/context'
+"use client";
+import { useState, useEffect } from "react";
+import { Play, Eye, Filter, X, Calendar, User } from "lucide-react";
+import { useVideoContext } from "../context";
+import { useArtistsContext } from "@/modules/artist/context";
 
 export default function VideosSection() {
-  const { filteredVideos, filterByArtist, sortByNewest, currentFilter, resetFilters } = useVideoContext()
-  const { artists } = useArtistsContext()
-  const [selectedVideo, setSelectedVideo] = useState<string | null>(null)
-  const [showFilters, setShowFilters] = useState(false)
+  const {
+    filteredVideos,
+    filterByArtist,
+    sortByNewest,
+    currentFilter,
+    resetFilters,
+  } = useVideoContext();
+  const { artists } = useArtistsContext();
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [showFilters, setShowFilters] = useState(false);
 
   const formatViews = (views: number) => {
-    if (views >= 1000000) return `${(views / 1000000).toFixed(1)}M`
-    if (views >= 1000) return `${(views / 1000).toFixed(1)}K`
-    return views.toString()
-  }
+    if (views >= 1000000) return `${(views / 1000000).toFixed(1)}M`;
+    if (views >= 1000) return `${(views / 1000).toFixed(1)}K`;
+    return views.toString();
+  };
 
   return (
-    <section id="videos" className="py-24 bg-gradient-to-br from-royal-dark/90 to-royal-purple/90">
+    <section
+      id="videos"
+      className="py-24 bg-gradient-to-br from-royal-dark/90 to-royal-purple/90"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-8">
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white text-center md:text-left mb-6 md:mb-0 animate-slide-up">
@@ -58,10 +67,12 @@ export default function VideosSection() {
                     <button
                       key={artist.id}
                       onClick={() => filterByArtist(artist.id)}
-                      className={`px-3 py-1 rounded-full text-sm flex items-center space-x-1 ${currentFilter.type === "artist" && currentFilter.value === artist.id
-                        ? "bg-gold-500 text-royal-dark"
-                        : "bg-white/10 text-white hover:bg-white/20"
-                        } transition-colors`}
+                      className={`px-3 py-1 rounded-full text-sm flex items-center space-x-1 ${
+                        currentFilter.type === "artist" &&
+                        currentFilter.value === artist.id
+                          ? "bg-gold-500 text-royal-dark"
+                          : "bg-white/10 text-white hover:bg-white/20"
+                      } transition-colors`}
                     >
                       <User className="h-3 w-3" />
                       <span>{artist.name}</span>
@@ -71,16 +82,16 @@ export default function VideosSection() {
               </div>
 
               <div>
-                <h3 className="text-white font-semibold mb-3">
-                  Sort Options
-                </h3>
+                <h3 className="text-white font-semibold mb-3">Sort Options</h3>
                 <div className="flex flex-wrap gap-2">
                   <button
                     onClick={sortByNewest}
-                    className={`px-3 py-1 rounded-full text-sm flex items-center space-x-1 ${currentFilter.type === "sort" && currentFilter.value === "newest"
-                      ? "bg-gold-500 text-royal-dark"
-                      : "bg-white/10 text-white hover:bg-white/20"
-                      } transition-colors`}
+                    className={`px-3 py-1 rounded-full text-sm flex items-center space-x-1 ${
+                      currentFilter.type === "sort" &&
+                      currentFilter.value === "newest"
+                        ? "bg-gold-500 text-royal-dark"
+                        : "bg-white/10 text-white hover:bg-white/20"
+                    } transition-colors`}
                   >
                     <Calendar className="h-3 w-3" />
                     <span>Newest First</span>
@@ -105,7 +116,7 @@ export default function VideosSection() {
                   alt={video.title}
                   className="w-full h-full object-cover"
                 />
-                
+
                 {/* Play overlay */}
                 <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors flex items-center justify-center">
                   <div className="w-20 h-20 bg-gold-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -129,7 +140,9 @@ export default function VideosSection() {
                     <Eye className="h-4 w-4" />
                     <span>{formatViews(video.views)} views</span>
                   </div>
-                  <span>{new Date(video.releaseDate).toLocaleDateString()}</span>
+                  <span>
+                    {new Date(video.releaseDate).toLocaleDateString()}
+                  </span>
                 </div>
               </div>
             </div>
@@ -142,16 +155,20 @@ export default function VideosSection() {
             <div className="bg-royal-dark rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden border border-gold-500/30">
               <div className="aspect-video">
                 <iframe
-                  src={`https://www.youtube.com/embed/${filteredVideos.find(v => v.id === selectedVideo)?.youtubeId}`}
+                  src={`${
+                    filteredVideos.find((v) => v.id === selectedVideo)?.videoUrl
+                  }`}
+                  // src={`https://www.youtube.com/embed/${filteredVideos.find(v => v.id === selectedVideo)?.youtubeId}`}
                   className="w-full h-full"
                   allowFullScreen
+                  title="Youtube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 />
               </div>
               <div className="p-4">
                 <div className="flex justify-between items-start mb-2">
                   <h3 className="font-display text-xl font-bold text-white">
-                    {filteredVideos.find(v => v.id === selectedVideo)?.title}
+                    {filteredVideos.find((v) => v.id === selectedVideo)?.title}
                   </h3>
                   <button
                     onClick={() => setSelectedVideo(null)}
@@ -160,14 +177,32 @@ export default function VideosSection() {
                     <X className="h-5 w-5" />
                   </button>
                 </div>
-                <p className="text-gold-400 mb-2">{filteredVideos.find(v => v.id === selectedVideo)?.artist}</p>
-                <p className="text-white/70 text-sm mb-4">{filteredVideos.find(v => v.id === selectedVideo)?.description}</p>
+                <p className="text-gold-400 mb-2">
+                  {filteredVideos.find((v) => v.id === selectedVideo)?.artist}
+                </p>
+                <p className="text-white/70 text-sm mb-4">
+                  {
+                    filteredVideos.find((v) => v.id === selectedVideo)
+                      ?.description
+                  }
+                </p>
                 <div className="flex items-center justify-between text-white/60 text-sm">
                   <div className="flex items-center space-x-1">
                     <Eye className="h-4 w-4" />
-                    <span>{formatViews(filteredVideos.find(v => v.id === selectedVideo)?.views || 0)} views</span>
+                    <span>
+                      {formatViews(
+                        filteredVideos.find((v) => v.id === selectedVideo)
+                          ?.views || 0
+                      )}{" "}
+                      views
+                    </span>
                   </div>
-                  <span>{new Date(filteredVideos.find(v => v.id === selectedVideo)?.releaseDate || '').toLocaleDateString()}</span>
+                  <span>
+                    {new Date(
+                      filteredVideos.find((v) => v.id === selectedVideo)
+                        ?.releaseDate || ""
+                    ).toLocaleDateString()}
+                  </span>
                 </div>
               </div>
             </div>
@@ -175,5 +210,5 @@ export default function VideosSection() {
         )}
       </div>
     </section>
-  )
+  );
 }
