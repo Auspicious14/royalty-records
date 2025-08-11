@@ -295,25 +295,28 @@ export const BookingModal = ({
           </div>
 
           {/* Submit */}
-          <div className="flex items-center justify-between pt-6 border-t border-gray-200">
-            <p className="text-sm text-gray-600">
+          <div className="border-t border-gray-200">
+            <p className="text-sm text-gray-600 pt-4">
               We'll respond within 24-48 hours
             </p>
-            <div className="flex space-x-3">
-              <button
-                type="button"
-                onClick={onClose}
-                className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
-              >
-                Cancel
-              </button>
-              <button
-                type="submit"
-                disabled={isBookingLoading}
-                className="px-6 py-2 bg-gradient-to-r from-gold-500 to-gold-600 text-white rounded-lg hover:from-gold-600 hover:to-gold-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isBookingLoading ? "Submitting..." : "Submit Request"}
-              </button>
+
+            <div className="flex items-center justify-between pt-6 ">
+              <div className="flex space-x-3">
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={isBookingLoading}
+                  className="px-6 py-2 bg-gradient-to-r from-gold-500 to-gold-600 text-white rounded-lg hover:from-gold-600 hover:to-gold-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isBookingLoading ? "Submitting..." : "Submit Request"}
+                </button>
+              </div>
             </div>
           </div>
         </form>

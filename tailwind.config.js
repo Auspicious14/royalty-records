@@ -31,7 +31,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["Oswald", "Roboto", "sans-serif"],
+        sans: ["Open Sans", "Roboto", "sans-serif"],
       },
       backgroundImage: {
         "gradient-royal":

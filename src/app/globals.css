@@ -2,7 +2,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=OpenSans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
 
 * {
   margin: 0;
@@ -15,13 +16,13 @@ html {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   background: linear-gradient(135deg, #1a1a2e 0%, #533c96 50%, #0f3460 100%);
   min-height: 100vh;
 }
 
 .font-display {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 @layer utilities {
