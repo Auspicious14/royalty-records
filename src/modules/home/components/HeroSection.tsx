@@ -19,13 +19,13 @@ export default function HeroSection() {
             Welcome To
           </h1>
           <h2 className="font-display text-5xl sm:text-7xl lg:text-9xl font-black text-gradient-gold mb-4 leading-none">
-            KINGS PRODUCTIONS
+            ROYALTY
           </h2>
           <h3 className="font-display text-3xl sm:text-5xl lg:text-7xl font-bold text-gradient-gold mb-8">
-            & MANAGEMENT
+            RECORDS
           </h3>
           <p className="text-xl sm:text-2xl lg:text-3xl text-white font-light mb-12 max-w-3xl mx-auto">
-            WHERE LEGEND HITS ARE MADE
+            WHERE ENTERTAINMENT MEETS BUSINESS
           </p>
           {/* Video Background with proper positioning and sizing */}
           <div className="relative w-full h-[50vh] my-8">

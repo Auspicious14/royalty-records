@@ -1,36 +1,45 @@
-'use client'
-import { useState } from 'react'
-import { X, Calendar, MapPin, Clock, DollarSign } from 'lucide-react'
-import { useForm } from 'react-hook-form'
-import { Artist, BookingRequest } from '../model'
-import { useArtistsContext } from '../context'
+"use client";
+import { useState } from "react";
+import { X, Calendar, MapPin, Clock, DollarSign } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { Artist, BookingRequest } from "../model";
+import { useArtistsContext } from "../context";
 
 interface BookingModalProps {
-  artist: Artist
-  isOpen: boolean
-  onClose: () => void
+  artist: Artist;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
-type BookingFormData = Omit<BookingRequest, 'artistId'>
+type BookingFormData = Omit<BookingRequest, "artistId">;
 
-export default function BookingModal({ artist, isOpen, onClose }: BookingModalProps) {
-  const { submitBookingRequest, isBookingLoading } = useArtistsContext()
-  const { register, handleSubmit, reset, formState: { errors } } = useForm<BookingFormData>()
+export const BookingModal = ({
+  artist,
+  isOpen,
+  onClose,
+}: BookingModalProps) => {
+  const { submitBookingRequest, isBookingLoading } = useArtistsContext();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<BookingFormData>();
 
-  if (!isOpen) return null
+  if (!isOpen) return null;
 
   const onSubmit = async (data: BookingFormData) => {
     const bookingData: BookingRequest = {
       ...data,
       artistId: artist.id,
-    }
+    };
 
-    const success = await submitBookingRequest(bookingData)
+    const success = await submitBookingRequest(bookingData);
     if (success) {
-      reset()
-      onClose()
+      reset();
+      onClose();
     }
-  }
+  };
 
   return (
     <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
@@ -44,8 +53,12 @@ export default function BookingModal({ artist, isOpen, onClose }: BookingModalPr
               className="w-12 h-12 rounded-full object-cover"
             />
             <div>
-              <h2 className="text-xl font-bold text-gray-900">Book {artist.name}</h2>
-              <p className="text-gray-600 text-sm">Submit your booking request</p>
+              <h2 className="text-xl font-bold text-gray-900">
+                Book {artist.name}
+              </h2>
+              <p className="text-gray-600 text-sm">
+                Submit your booking request
+              </p>
             </div>
           </div>
           <button
@@ -64,41 +77,45 @@ export default function BookingModal({ artist, isOpen, onClose }: BookingModalPr
               <span className="w-2 h-2 bg-gold-500 rounded-full mr-2"></span>
               Contact Information
             </h3>
-            
+
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Full Name *
                 </label>
                 <input
-                  {...register('clientName', { required: 'Name is required' })}
+                  {...register("clientName", { required: "Name is required" })}
                   type="text"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent"
                   placeholder="Enter your full name"
                 />
                 {errors.clientName && (
-                  <p className="text-red-500 text-sm mt-1">{errors.clientName.message}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.clientName.message}
+                  </p>
                 )}
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Email Address *
                 </label>
                 <input
-                  {...register('clientEmail', { 
-                    required: 'Email is required',
+                  {...register("clientEmail", {
+                    required: "Email is required",
                     pattern: {
                       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: 'Invalid email address'
-                    }
+                      message: "Invalid email address",
+                    },
                   })}
                   type="email"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent"
                   placeholder="your@email.com"
                 />
                 {errors.clientEmail && (
-                  <p className="text-red-500 text-sm mt-1">{errors.clientEmail.message}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.clientEmail.message}
+                  </p>
                 )}
               </div>
             </div>
@@ -108,13 +125,17 @@ export default function BookingModal({ artist, isOpen, onClose }: BookingModalPr
                 Phone Number *
               </label>
               <input
-                {...register('clientPhone', { required: 'Phone number is required' })}
+                {...register("clientPhone", {
+                  required: "Phone number is required",
+                })}
                 type="tel"
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent"
                 placeholder="+1 (555) 123-4567"
               />
               {errors.clientPhone && (
-                <p className="text-red-500 text-sm mt-1">{errors.clientPhone.message}</p>
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.clientPhone.message}
+                </p>
               )}
             </div>
           </div>
@@ -132,7 +153,9 @@ export default function BookingModal({ artist, isOpen, onClose }: BookingModalPr
                   Event Type *
                 </label>
                 <select
-                  {...register('eventType', { required: 'Event type is required' })}
+                  {...register("eventType", {
+                    required: "Event type is required",
+                  })}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent"
                 >
                   <option value="">Select event type</option>
@@ -143,7 +166,9 @@ export default function BookingModal({ artist, isOpen, onClose }: BookingModalPr
                   <option value="other">Other</option>
                 </select>
                 {errors.eventType && (
-                  <p className="text-red-500 text-sm mt-1">{errors.eventType.message}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.eventType.message}
+                  </p>
                 )}
               </div>
 
@@ -152,13 +177,17 @@ export default function BookingModal({ artist, isOpen, onClose }: BookingModalPr
                   Event Date *
                 </label>
                 <input
-                  {...register('eventDate', { required: 'Event date is required' })}
+                  {...register("eventDate", {
+                    required: "Event date is required",
+                  })}
                   type="date"
-                  min={new Date().toISOString().split('T')[0]}
+                  min={new Date().toISOString().split("T")[0]}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent"
                 />
                 {errors.eventDate && (
-                  <p className="text-red-500 text-sm mt-1">{errors.eventDate.message}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.eventDate.message}
+                  </p>
                 )}
               </div>
             </div>
@@ -169,13 +198,17 @@ export default function BookingModal({ artist, isOpen, onClose }: BookingModalPr
                 Event Location *
               </label>
               <input
-                {...register('eventLocation', { required: 'Event location is required' })}
+                {...register("eventLocation", {
+                  required: "Event location is required",
+                })}
                 type="text"
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent"
                 placeholder="City, State/Country or Venue Name"
               />
               {errors.eventLocation && (
-                <p className="text-red-500 text-sm mt-1">{errors.eventLocation.message}</p>
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.eventLocation.message}
+                </p>
               )}
             </div>
 
@@ -186,10 +219,10 @@ export default function BookingModal({ artist, isOpen, onClose }: BookingModalPr
                   Duration (hours) *
                 </label>
                 <input
-                  {...register('duration', { 
-                    required: 'Duration is required',
-                    min: { value: 1, message: 'Minimum 1 hour' },
-                    max: { value: 12, message: 'Maximum 12 hours' }
+                  {...register("duration", {
+                    required: "Duration is required",
+                    min: { value: 1, message: "Minimum 1 hour" },
+                    max: { value: 12, message: "Maximum 12 hours" },
                   })}
                   type="number"
                   min="1"
@@ -199,7 +232,9 @@ export default function BookingModal({ artist, isOpen, onClose }: BookingModalPr
                   placeholder="2.5"
                 />
                 {errors.duration && (
-                  <p className="text-red-500 text-sm mt-1">{errors.duration.message}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.duration.message}
+                  </p>
                 )}
               </div>
 
@@ -209,9 +244,9 @@ export default function BookingModal({ artist, isOpen, onClose }: BookingModalPr
                   Budget (USD) *
                 </label>
                 <input
-                  {...register('budget', { 
-                    required: 'Budget is required',
-                    min: { value: 1000, message: 'Minimum budget is $1,000' }
+                  {...register("budget", {
+                    required: "Budget is required",
+                    min: { value: 1000, message: "Minimum budget is $1,000" },
                   })}
                   type="number"
                   min="1000"
@@ -220,7 +255,9 @@ export default function BookingModal({ artist, isOpen, onClose }: BookingModalPr
                   placeholder="10000"
                 />
                 {errors.budget && (
-                  <p className="text-red-500 text-sm mt-1">{errors.budget.message}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.budget.message}
+                  </p>
                 )}
               </div>
             </div>
@@ -228,14 +265,16 @@ export default function BookingModal({ artist, isOpen, onClose }: BookingModalPr
 
           {/* Additional Information */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-gray-900">Additional Information</h3>
-            
+            <h3 className="text-lg font-semibold text-gray-900">
+              Additional Information
+            </h3>
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Special Requirements
               </label>
               <textarea
-                {...register('additionalRequirements')}
+                {...register("additionalRequirements")}
                 rows={3}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent resize-none"
                 placeholder="Sound equipment, lighting, backstage requirements, etc."
@@ -247,7 +286,7 @@ export default function BookingModal({ artist, isOpen, onClose }: BookingModalPr
                 Message
               </label>
               <textarea
-                {...register('message')}
+                {...register("message")}
                 rows={3}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent resize-none"
                 placeholder="Tell us more about your event..."
@@ -273,12 +312,12 @@ export default function BookingModal({ artist, isOpen, onClose }: BookingModalPr
                 disabled={isBookingLoading}
                 className="px-6 py-2 bg-gradient-to-r from-gold-500 to-gold-600 text-white rounded-lg hover:from-gold-600 hover:to-gold-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isBookingLoading ? 'Submitting...' : 'Submit Request'}
+                {isBookingLoading ? "Submitting..." : "Submit Request"}
               </button>
             </div>
           </div>
         </form>
       </div>
     </div>
-  )
-}
+  );
+};

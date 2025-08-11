@@ -5,7 +5,6 @@ import { Artist } from "../model";
 
 export default function ArtistsSection() {
   const { artists } = useArtistsContext() as { artists: Artist[] };
-  console.log({ artists });
 
   return (
     <section

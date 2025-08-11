@@ -231,9 +231,9 @@ export const SAMPLE_VIDEOS = [
 ];
 
 export const SAMPLE_ABOUT = {
-  title: "About Kings Productions & Management",
+  title: "About Royalty Records",
   content:
-    "Kings Productions & Management stands as the premier entertainment and business hub, dedicated to promoting exceptional artists and creating premium content that resonates globally. We are the birthplace where legend hits are made, fostering talent and transforming dreams into chart-topping realities.",
+    "Royalty Records stands as the premier entertainment and business hub, dedicated to promoting exceptional artists and creating premium content that resonates globally. We are the birthplace where entertainment meets business, fostering talent and transforming dreams into chart-topping realities.",
   mission:
     "To elevate artists to legendary status through innovative production techniques, strategic management, and unwavering dedication to artistic excellence. We provide comprehensive support that empowers artists to reach their full potential.",
   vision:

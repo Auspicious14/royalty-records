@@ -23,10 +23,10 @@ export default function Footer() {
 
           <div className="text-center md:text-right">
             <p className="text-white/60 text-sm mb-2">
-              Where Legend Hits Are Made
+              Where Entertainment Meets Business
             </p>
             <p className="text-white/40 text-xs">
-              © 2025 Kings Productions & Management. All rights reserved.
+              © 2025 Royalty Records. All rights reserved.
             </p>
           </div>
         </div>
