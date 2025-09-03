@@ -25,7 +25,7 @@ export default function HeroSection() {
             & MANAGEMENT
           </h3>
           <p className="text-xl sm:text-2xl lg:text-3xl text-white font-light mb-12 max-w-3xl mx-auto">
-            WHERE LEGEND HITS ARE MADE
+            WHERE LEGENDS & HITS ARE MADE
           </p>
           {/* Video Background with proper positioning and sizing */}
           <div className="relative w-full h-[50vh] my-8">
