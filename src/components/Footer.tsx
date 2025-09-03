@@ -32,7 +32,7 @@ export default function Footer() {
 
           <div className="text-center ">
             <p className="text-white/60 text-sm mb-2">
-              Where Legend Hits Are Made
+              Where Legends & Hits Are Made
             </p>
             <p className="text-white/40 text-xs">
               © 2025 Kings Productions & Management. All rights reserved.
